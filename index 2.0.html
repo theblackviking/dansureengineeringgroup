@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Dansure Engineering Group Limited - Professional HVAC, Electrical, Plumbing, and ICT Services in Accra, Ghana." />
+  <title>Dansure Engineering Group Limited</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #004080;
+      --secondary: #25D366;
+      --accent: #f5f5f5;
+      --dark: #00264d;
+      --light: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #333;
+      line-height: 1.6;
+      background: #f0f2f5;
+    }
+
+    header {
+      background: rgba(0, 64, 128, 0.9);
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header img {
+      width: 90px;
+      max-width: 100%;
+    }
+
+    .header-text {
+      max-width: 600px;
+    }
+
+    .header-text h1 {
+      font-size: 26px;
+      margin-bottom: 5px;
+    }
+
+    .header-text p {
+      font-size: 16px;
+      font-style: italic;
+    }
+
+    main {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 40px 20px;
+    }
+
+    section {
+      margin-bottom: 60px;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    h2 {
+      color: var(--primary);
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .service-card {
+      background: var(--accent);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    form input, form textarea {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 100%;
+    }
+
+    form button {
+      background-color: var(--primary);
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .whatsapp-button {
+      display: inline-block;
+      background-color: var(--secondary);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-top: 20px;
+    }
+
+    footer {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    /* Slideshow */
+    .slideshow-container {
+      position: relative;
+      max-width: 1000px;
+      margin: 40px auto;
+    }
+
+    .slideshow {
+      display: none;
+    }
+
+    .slideshow img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .fade {
+      animation: fade 1s ease-in-out;
+    }
+
+    @keyframes fade {
+      from { opacity: 0.4 }
+      to { opacity: 1 }
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 24px;
+      user-select: none;
+      background-color: rgba(0,0,0,0.4);
+      transform: translateY(-50%);
+      border-radius: 5px;
+    }
+
+    .next {
+      right: 0;
+    }
+
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.6);
+    }
+
+    .dots {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .dot {
+      cursor: pointer;
+      height: 12px;
+      width: 12px;
+      margin: 0 5px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+
+    .active, .dot:hover {
+      background-color: #717171;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .header-text h1 {
+        font-size: 22px;
+      }
+
+      .header-text p {
+        font-size: 14px;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .service-card {
+        padding: 15px;
+      }
+
+      .slideshow-container {
+        max-width: 100%;
+      }
+
+      .prev, .next {
+        font-size: 20px;
+        padding: 12px;
+      }
+
+      .dots {
+        margin-top: 10px;
+      }
+
+      form input, form textarea, form button {
+        font-size: 16px;
+      }
+
+      footer {
+        font-size: 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      form button {
+        padding: 10px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="https://i.postimg.cc/vm978hNQ/Dansure-Engineering-Logo-Design-1.png" alt="Dansure Logo" />
+    <div class="header-text">
+      <h1>Dansure Engineering Group Limited</h1>
+      <p>Quality Services For Sure!</p>
+    </div>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About Us</h2>
+      <p>Dansure Engineering Group Limited is a multi-disciplinary engineering and construction services company based in Accra, Ghana. We deliver high-quality, cost-effective, and sustainable solutions across mechanical (HVAC), electrical, plumbing, fire safety, security, ICT infrastructure, and building materials.</p>
+      <p>We aim to be Ghana’s most trusted name in engineering and construction, delivering excellence through every residential, commercial, and industrial project.</p>
+      <p>At Dansure, we don’t just build systems—we build lasting partnerships for sure.</p>
+    </section>
+
+    <section id="services">
+      <h2>Our Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Fire & Security Systems</h3>
+          <p>Fire alarms, sprinkler, fire hose, hydrants, fire extinguishers, suppression, CCTV, access control, and security audits.</p>
+        </div>
+        <div class="service-card">
+          <h3>Electrical Engineering</h3>
+          <p>Smart lighting, backup power, energy audits, and reliable electrical systems.</p>
+        </div>
+        <div class="service-card">
+          <h3>Plumbing Systems</h3>
+          <p>Installations, repairs, water filtration, and routine maintenance.</p>
+        </div>
+        <div class="service-card">
+          <h3>ICT Infrastructure</h3>
+          <p>Structured cabling, Wi-Fi, server rooms, and cybersecurity solutions.</p>
+        </div>
+        <div class="service-card">
+          <h3>Mechanical (HVAC)</h3>
+          <p>Design and maintenance of HVAC systems for efficient climate control.</p>
+        </div>
+        <div class="service-card">
+          <h3>Construction Materials</h3>
+          <p>We supply cement, concrete blocks, sand, iron rods, pipes, cables, HVAC tools, and other essentials.</p>
+        </div>
+        <div class="service-card">
+          <h3>Project Management</h3>
+          <p>Consultancy, coordination, site supervision, and post-project evaluations, testing and commision.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDESHOW SECTION -->
+    <section class="slideshow-container">
+      <div class="slideshow fade">
+        <img src="https://i.postimg.cc/ydSwLzrK/Whats-App-Image-2025-04-29-at-03-00-14-e4ea7d07.jpg" alt="Slide 1" />
+      </div>
+      <div class="slideshow fade">
+        <img src="https://i.postimg.cc/7ZHrwdb1/Whats-App-Image-2025-04-29-at-03-00-14-212c4c8f.jpg" alt="Slide 2" />
+      </div>
+      <div class="slideshow fade">
+        <img src="https://i.postimg.cc/SKm6ZLTx/Whats-App-Image-2025-04-29-at-03-00-15-68600137.jpg" alt="Slide 3" />
+      </div>
+      <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+      <a class="next" onclick="changeSlide(1)">&#10095;</a>
+      <div class="dots">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p><strong>General Manager:</strong> Mr. Daniel K. Dagba</p>
+      <p><strong>Phone:</strong> +233 550 788 719 / +233 207 030 158 / +233 277 070 150</p>
+      <p><strong>Email:</strong> <a href="mailto:dansureenggp@gmail.com">dansureenggp@gmail.com</a></p>
+      <p><strong>Address:</strong> <a href="https://maps.app.goo.gl/WmRAZDeo7T1iAh236" target="_blank">Dansure Engineering Group Limited, Achimota Old Station, near Shell Filling Station, Accra, Ghana</a></p>
+
+      <form action="https://formspree.io/f/xanonaww" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="_replyto" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+
+      <a href="https://wa.me/+233550788719?text=Hello%20Dansure%20Engineering%20Group%20Limited,%20I%20would%20like%20to%20inquire%20about%20your%20services." class="whatsapp-button" target="_blank">
+        Message Us on WhatsApp
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Dansure Engineering Group Limited. All rights reserved.</p>
+  </footer>
+
+  <script>
+    let slideIndex = 1;
+    let slideTimer;
+
+    function showSlides(n) {
+      const slides = document.getElementsByClassName("slideshow");
+      const dots = document.getElementsByClassName("dot");
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (let i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+      clearTimeout(slideTimer);
+      slideTimer = setTimeout(() => { showSlides(slideIndex += 1) }, 4000); // Auto-slide every 4 seconds
+    }
+
+    function changeSlide(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    showSlides(slideIndex);
+  </script>
+</body>
+</html>
